@@ -21,20 +21,20 @@
         class="js-navigate js-right icon-arrow-right-circle icons"> </i>
     </div>
     <div class="recipe-image">
-      {% for bookmark in bookmarks %}
-      <div class="recipe {% if loop.index == 1 %}active{% endif %}"><img class="pie-photo" src="{{bookmark.image}}"
-          style="max-width: 106%;
+      {% for lr in localrecipes %}
+      <div class="recipe {% if loop.index == 1 %}active{% endif %}"><img class="pie-photo"
+          src="../static/img/cook-for-home.jpg" style="max-width: 106%;
     min-height: 513px;
     /* position: absolute; */
     right: -17px;" /></div>
       {% endfor %}
     </div>
     <div class="recipe-content">
-      {% for bookmark in bookmarks %}
+      {% for lr in localrecipes %}
       <div class="recipe {% if loop.index == 1 %}active{% endif %} green">
         <div class="recipe-page">{{ loop.index }}</div>
         <div class="recipe-content-inner">
-          <h1 class="pie-name">{{ bookmark.title }}</h1>
+          <h1 class="pie-name">{{ lr.name }}</h1>
           <div class="pie-serving">
             <svg x="0px" y="0px" viewBox="0 0 463 463">
               <g>
@@ -52,10 +52,10 @@
                 </path>
               </g>
             </svg>
-            <p>Serves 3</p>
+            <p>{{ lr.ingredients }}</p>
           </div>
-          <!-- <div class="pie-context">Coffee cream pie. This one’ll give you extra reason to get out of bed in the morning.</div> -->
-          <div class="pie-cta " style="margin-top: 120px;"> <a href="/recipe/{{ bookmark.id }}">See recipe</a></div>
+          <div class="pie-context">{{lr.instructions}}</div>
+
         </div>
       </div>
       {% endfor %}
@@ -67,3 +67,20 @@
 {% block includes %}
 <script type="text/javascript" src="../static/js/explore.js"></script>
 {% endblock %}
+
+<!-- <div class="container">
+    <div class="row">
+        {% for lr in localrecipes %}
+        <div class="col-md-1.5">
+            <p class="card-text">Recipe Name<br>
+                Ingredients<br>
+                Instructions<br></p>
+        </div>
+        <div class="col-md-2.5">
+            <p class="card-text">:{{ lr.name }}<br>
+                :{{ lr.ingredients }}<br>
+                :{{ lr.instructions }}<br></p>
+        </div>
+        {% endfor %}
+    </div>
+</div>-->
