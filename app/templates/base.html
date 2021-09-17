@@ -116,33 +116,21 @@
                                     <!-- <li><a href="#">About Us</a></li> -->
 
                                     {% if current_user.is_authenticated %}
-                                    <li><a href="{{ url_for('view_profile') }}">Profile</a></li>
-                                    <li><a href="{{ url_for('pantry') }}">Pantry</a></li>
-                                    <li><a href="{{ url_for('meal_planner') }}">Meal Planner</a></li>
+                                    <li><a href="">Profile</a></li>
+                                    <li><a href="">Pantry</a></li>
+                                    <li><a href="">Meal Planner</a></li>
                                     <li><a href="#">Recipe Book</a>
                                         <ul class="dropdown">
                                             <li><a href="/user/bookmarks">Saved Recipes</a></li>
-                                            <li><a href="{{ url_for('localView') }}">My Recipes</a></li>
-                                            <li><a href="{{ url_for('addrecipe') }}">Add New Recipe</a></li>
+                                            <li><a href="">My Recipes</a></li>
+                                            <li><a href="">Add New Recipe</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{ url_for('get_meals_from_cals') }}">Recommendations</a></li>
+                                    <li><a href="">Recommendations</a></li>
                                     {% endif %}
 
-                                    <!-- <li><a href="{{ url_for('pantry') }}">Pantry</a></li> -->
-                                    <li><a href="{{ url_for('category') }}">Discover</a></li>
-                                    <!-- <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="{{ url_for('index') }}">Home</a></li>
-                                            <li><a href="{{ url_for('category') }}">Category</a></li>
-                                            <li><a href="{{ url_for('index') }}">Category Post</a></li>
-                                            <li><a href="{{ url_for('details') }}">Single Post</a></li>
-                                            <li><a href="/user/bookmarks">Recipe Book</a></li>
-                                            <li><a href=" {{ url_for('contacts') }} ">Contact</a></li> 
-                                            <li><a href="{{ url_for('contacts') }}">About Us</a></li>
-                                        </ul>
-                                       
-                                    </li> -->
+                                    <li><a href="">Discover</a></li>
+                                    
 
 
                                     <!-- Random dropdown -->
@@ -188,17 +176,17 @@
                                     </li> -->
 
 
-                                    <li><a href=" {{ url_for('contacts') }} ">Contact</a></li>
+                                    <li><a href="">Contact</a></li>
                                 </ul>
 
                                 <!-- Login/Register -->
                                 <div class="login-area">
                                     {% if current_user.is_anonymous %}
-                                    <a href="{{ url_for('login') }}">Login</a>
+                                    <a href="">Login</a>
                                     <b>/</b>
-                                    <a href=" {{ url_for('register') }}">Register</a>
+                                    <a href="">Register</a>
                                     {% else %}
-                                    <a href="{{ url_for('logout') }}">Logout</a>
+                                    <a href="">Logout</a>
                                     {% endif %}
 
                                 </div>
